@@ -27,7 +27,7 @@ class _HomePopularChallengeState extends State<HomePopularChallenge> {
       final response = await _challengeService.getChallenges(
         page: 1,
         limit: 5,
-        sortBy: 'viewCount', // 참여자 수 기준으로 인기 챌린지 정렬
+        sortBy: 'viewCount', // 조회수 기준으로 인기 챌린지 정렬
       );
       print('인기 챌린지 응답: $response');
       if (response['success']) {

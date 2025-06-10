@@ -27,23 +27,6 @@ class AuthService {
         receiveTimeout: const Duration(seconds: 5),
       ),
     );
-
-    // 인터셉터 추가 (토큰 자동 추가)
-    dio.interceptors.add(
-      InterceptorsWrapper(
-        onRequest: (options, handler) async {
-          final token = await _storage.read(key: 'auth_token');
-          if (token != null) {
-            options.headers['Authorization'] = 'Bearer $token';
-          }
-          handler.next(options);
-        },
-        onError: (error, handler) {
-          print('API Error: ${error.response?.data}');
-          handler.next(error);
-        },
-      ),
-    );
   }
 
   Future<Response> login(String provider, String token) async {
