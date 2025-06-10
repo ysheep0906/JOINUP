@@ -39,8 +39,6 @@ class _HomeParticipatingChallengesState
         // 평균 달성률 계산 (completedDates 기반으로)
         double totalAchievement = 0.0;
         if (challenges.isNotEmpty) {
-          print('참여 중인 챌린지 데이터: $challenges');
-
           for (final challenge in challenges) {
             final userChallenge = challenge['userChallenge']; // 올바른 구조로 수정
             final challengeData = challenge['challenge']; // 올바른 구조로 수정
@@ -78,7 +76,6 @@ class _HomeParticipatingChallengesState
           }
 
           totalAchievement = totalAchievement / challenges.length;
-          print(totalAchievement);
         }
 
         setState(() {

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:joinup/screens/auth/auth_screen.dart';
 import 'package:joinup/screens/challenge/challenge_screen.dart';
+import 'package:joinup/screens/home/chat_list_screen.dart';
 import 'package:joinup/screens/home/home_screen.dart';
 import 'package:joinup/screens/home/tabs/tab_home.dart';
-import 'package:joinup/screens/notifications/notifications_screen.dart';
 import 'package:joinup/screens/profile/calendar_screen.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -49,8 +49,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const AuthScreen(),
         '/home': (context) => HomeScreen(),
-        '/calendar': (context) => const CalendarScreen(),
-        '/notifications': (context) => const NotificationsScreen(),
+        '/calendar': (context) => CalendarScreen(),
+        '/chat-list': (context) => ChatListScreen(),
       },
       onGenerateRoute: (settings) {
         final uri = Uri.parse(settings.name ?? '');

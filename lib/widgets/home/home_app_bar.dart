@@ -49,9 +49,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               shape: BoxShape.circle,
             ),
             child: IconButton(
-              icon: const Icon(Icons.notifications, color: Colors.black),
+              icon: const Icon(Icons.chat, color: Colors.black),
               onPressed: () {
-                Navigator.pushNamed(context, '/notifications');
+                Navigator.pushNamed(context, '/chat-list');
               },
             ),
           ),

@@ -8,6 +8,7 @@ class HomeAchievementBadges extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: API에서 사용자의 뱃지 데이터 가져오기
+    final badgeCount = userInfo?['earnedBadges'].length ?? 0;
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -69,8 +70,8 @@ class HomeAchievementBadges extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: const Text(
-                      '획득한 뱃지 5개',
+                    child: Text(
+                      '획득한 뱃지 $badgeCount 개',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w700,

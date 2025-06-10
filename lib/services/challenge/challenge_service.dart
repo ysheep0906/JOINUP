@@ -319,7 +319,6 @@ class ChallengeService {
   Future<Map<String, dynamic>> getParticipatingChallenges() async {
     try {
       final response = await dio.get('/userchallenge/participating');
-      print('참여 중인 챌린지 응답: ${response.data}');
       return {'success': true, 'data': response.data};
     } on DioException catch (e) {
       return _handleDioError(e);
